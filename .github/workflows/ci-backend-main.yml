@@ -5,8 +5,8 @@ on:
 
 jobs: 
   primeiro-job:  
-    runs-on: Ubuntu 22.04.1 LTS
-    steps:  #passos que vao ser feitos
+    runs-on: ubuntu-latest
+    steps:  
       - run: echo "Primeiro Passo"
       - name: Checkout 
         uses: actions/checkout@v3
