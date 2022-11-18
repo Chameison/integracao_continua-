@@ -10,6 +10,7 @@ on:
   pull_request:
     paths:
       - 'back-end/**'
+  workflow_call:
 
 jobs: 
   teste:  
