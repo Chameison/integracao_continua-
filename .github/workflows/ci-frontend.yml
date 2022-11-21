@@ -20,6 +20,20 @@ jobs:
           node-version: 16
       - name: Set Up Angular Cli
         run: npm install -g @angular/cli
+      - name: Cache modulos node
+        id: cache-nodemodules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: front-end/node-modules
+          key: ${{ runner.os }}-build-${{ env.cache-name}}-${{ hashFilles('**/package-json') }}
+          restore-keys:
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+          
+      - name: Install
         working-directory: front-end/
       - name: testes front
         working-directory: front-end/
