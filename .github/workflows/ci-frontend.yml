@@ -27,7 +27,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: front-end/node-modules
-          key: ${{ runner.os }}-build-${{ env.cache-name}}-${{ hashFilles('**/package-json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name}}-${{ hashFilles('**/package-look.json') }}
           restore-keys:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
