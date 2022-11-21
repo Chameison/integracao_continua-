@@ -20,6 +20,8 @@ jobs:
           node-version: 16
       - name: Set Up Angular Cli
         run: npm install -g @angular/cli
+      - name: Cliente railway 
+        run: npm install -g @railway/cli
       - name: Cache modulos node
         id: cache-nodemodules
         uses: actions/cache@v2
@@ -44,7 +46,7 @@ jobs:
         run: npm run build --prod
       - name: Deploy
         working-directory: front-end/dist/sgcmapp
-        run: railway up --detach --service sgcm_ChDev2
+        run: railway up --detach --service sgcm_ChDev
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
