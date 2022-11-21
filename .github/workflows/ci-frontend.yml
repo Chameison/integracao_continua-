@@ -46,7 +46,7 @@ jobs:
         run: npm run build --prod
       - name: Deploy
         working-directory: front-end/dist/sgcmapp
-        run: railway up --detach --service sgcm_ChDev
+        run: railway up --detach --service sgcm_ChDev2
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
