@@ -1,0 +1,32 @@
+name: CI Fron-end 
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'front-end**'
+  pull_request:
+    paths:
+      - 'front-end/**'
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with: 
+          node-version: 16
+      - name: Set Up Angular Cli
+        run: npm install -g @angular/cli
+        working-directory: front-end/
+      - name: testes front
+        working-directory: front-end/
+        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - name: build
+        working-directory: front-end/
+        run: npm run build --prod
+
+
+        
