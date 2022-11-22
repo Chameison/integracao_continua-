@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Copia do arquivo netlify.tom1
+      - name: Copia do arquivo netlify.toml
         run: cp front-end/netlify.toml front-end/dist/sgcmapp/
       - name: Instalação do cliente Netlify
         run: npm install -g netlify-cli
