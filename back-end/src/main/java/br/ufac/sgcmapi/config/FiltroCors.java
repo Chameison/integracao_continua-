@@ -18,7 +18,8 @@ public class FiltroCors {
         corsConfig.setAllowCredentials(true);
         corsConfig.setAllowedOrigins(
             Arrays.asList(
-                "https://sgcmchdev2-production-b512.up.railway.app")
+                "https://sgcmchdev2-production-b512.up.railway.app",
+                "https://sgcm-chdev.netlify.app")
                 
         );
         corsConfig.setAllowedMethods(Arrays.asList("*"));
