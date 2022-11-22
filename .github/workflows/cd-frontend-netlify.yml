@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Netllify
     steps:
+      - uses: actions/checkout@v3
       - name: Restaurar cache
         uses: actions/cache@v3
         with:
@@ -25,7 +26,7 @@ jobs:
         with:
           node-version: 16
       - name: Copia do arquivo netlify.tom1
-        run: cp front-end/netlify.tom1 front-end/dist/sgcmapp/
+        run: cp front-end/netlify.toml front-end/dist/sgcmapp/
       - name: Instalação do cliente Netlify
         run: npm install -g netlify-cli
       - name: Deploy
