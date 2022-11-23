@@ -29,5 +29,5 @@ jobs:
         run: cp front-end/netlify.toml front-end/dist/sgcmapp/
       - name: Instalação do cliente Netlify
         run: npm install -g netlify-cli
-      - name: Deploy
+      - name: Deploy 
         run: netlify deploy --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --dir=front-end/dist/sgcmapp --site=${{ secrets.NETLIFY_SITE_ID }} --prod
