@@ -1,3 +1,4 @@
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AgendaFormComponent } from './components/agenda-form/agenda-form.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: '', canActivate: [AutenticacaoGuard], children: [
     { path: 'agenda', component: AgendaListComponent },
     { path: 'agenda/form', component: AgendaFormComponent },
-    { path: 'atendimento', component: AtendimentoListComponent},    
+    { path: 'atendimento', component: AtendimentoListComponent},
     { path: 'pacientes', component: PacienteListComponent, },
     { path: 'pacientes/form', component: PacienteFormComponent },
     { path: 'profissionais', component: ProfissionalListComponent },
@@ -36,7 +37,8 @@ const routes: Routes = [
       { path: 'especialidades/form', component: EspecialidadeFormComponent },
       { path: 'usuarios', component: UsuarioListComponent },
       { path: 'usuarios/form', component: UsuarioFormComponent }
-    ] }
+    ] },
+    { path: 'dashboard', component: DashboardComponent }
   ]},
   { path: 'login', component: LoginComponent }
 ];
